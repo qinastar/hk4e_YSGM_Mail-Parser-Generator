@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>邮件生成器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(135deg, #ee769d 0%, #FFDEE9 19%, #f7eecb 39%, #bcf2a3 60%, #B5FFFC 80%, #da99f5 100%);
+            background-size: 400%;
+            animation: bganimation 15s infinite;
+        }
+
+        @keyframes bganimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            background-color: #f8aae1;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;
+            Segoe UI&quot;
+            ,
+            &quot;
+            Open Sans&quot;
+            ,
+            &quot;
+            Helvetica Neue&quot;
+            ,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        }
+
+        #main {
+            width: 600px;
+            margin: 5em auto;
+            padding: 2em;
+            color: white;
+            border-radius: 0.5em;
+            box-shadow: 2px 3px 7px 2px rgba(255, 84, 169, 0.02);
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            div {
+                margin: 0 auto;
+                width: auto;
+            }
+        }
+
+        input,
+        textarea {
+            background-color: #ff9f9f;
+            color: white;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 0.25em 0.5em;
+        }
+
+        label,
+        input {
+            margin: 0.25em;
+            display: flex;
+            flex-direction: column;
+            max-width: 65%;
+        }
+
+        span {
+            margin-left: 0.3em;
+        }
+
+        textarea {
+            height: 10em;
+        }
+
+        button {
+            background-color: #ff9f9f;
+            color: white;
+            border: 1px solid #30363d;
+            border-radius: 25px;
+            padding: 3px 12px;
+            font-size: 15px;
+            margin: 0.5em 0.5em;
+        }
+
+        input[type=&quot;
+        checkbox&quot;
+
+        ] {
+            display: block;
+            margin: 0.5em 0;
+            flex-direction: row;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" action="#">
+        <form>
+            <h1>邮件生成器</h1>
+            <a>仅限英文输入！
+            </a><br><br>
+            <label for="uid">
+                <span>UID</span>
+                <input type="text" id="uid" value="10000">
+            </label>
+            <label for="title">
+                <span>邮件标题</span>
+                <input type="text" id="title" value="GM_MAIL">
+            </label>
+            <label for="sender">
+                <span>发送者</span>
+                <input type="text" id="sender" value="GM">
+            </label>
+            <label for="expire_time">
+                <span>过期时间 (UNIX 时间戳格式)</span>
+                <input type="text" id="expire_time">
+            </label>
+            <label for="content">
+                <span>邮件内容</span>
+                <textarea id="content">BETA </textarea>
+            </label>
+            <label for="item_list">
+                <span>道具列表 (道具ID:数量:等级:晋升级别,...)</span>
+                <input id="item_list" value="201:9999">
+            </label>
+            <label for="is_collectible">
+                <span>可以收藏</span>
+                <input type="checkbox" id="is_collectible">
+            </label>
+            <button id="submitBtn">生成</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script src="src/index.js" defer=""></script>
+</body>
+
+</html>
